@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "repo": "AethelredFoundation/.github",
+  "repo": "aethelred-foundation/.github",
   "role": "org-control-plane",
   "status": "active",
-  "canonical_public_source": "AethelredFoundation/aethelred",
+  "canonical_public_source": "aethelred-foundation/aethelred",
   "monorepo_source_path": "docs/github-org-profile",
   "exported_from_monorepo": true,
   "release_authority": false,
-  "default_community_files_repo": "AethelredFoundation/.github",
+  "default_community_files_repo": "aethelred-foundation/.github",
   "updated_at": "2026-03-13"
 }
