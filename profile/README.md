@@ -13,7 +13,7 @@
   <a href="https://github.com/AethelredFoundation/aethelred/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-Apache_2.0-blue?style=flat-square" alt="License" /></a>
   <a href="https://go.dev"><img src="https://img.shields.io/badge/Go-1.24-00ADD8?style=flat-square&logo=go&logoColor=white" alt="Go" /></a>
   <a href="https://www.rust-lang.org"><img src="https://img.shields.io/badge/Rust-1.75+-DEA584?style=flat-square&logo=rust&logoColor=white" alt="Rust" /></a>
-  <a href="https://github.com/AethelredFoundation/aethelred/blob/main/SECURITY.md"><img src="https://img.shields.io/badge/Security-Audited-2ea44f?style=flat-square&logo=shield&logoColor=white" alt="Security Audited" /></a>
+  <a href="https://github.com/AethelredFoundation/aethelred/blob/main/SECURITY.md"><img src="https://img.shields.io/badge/Security-Audit_Scheduled_(Q3_2026)-yellow?style=flat-square&logo=shield&logoColor=white" alt="Security Audit Scheduled" /></a>
 </p>
 
 <br>
