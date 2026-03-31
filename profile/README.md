@@ -12,8 +12,17 @@
   <a href="https://twitter.com/aethelred_io"><img src="https://img.shields.io/badge/Twitter-%40aethelred__io-1DA1F2?style=flat-square&logo=x&logoColor=white" alt="Twitter" /></a>
   <a href="https://github.com/AethelredFoundation/aethelred/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-Apache_2.0-blue?style=flat-square" alt="License" /></a>
   <a href="https://go.dev"><img src="https://img.shields.io/badge/Go-1.24-00ADD8?style=flat-square&logo=go&logoColor=white" alt="Go" /></a>
-  <a href="https://www.rust-lang.org"><img src="https://img.shields.io/badge/Rust-1.75+-DEA584?style=flat-square&logo=rust&logoColor=white" alt="Rust" /></a>
+  <a href="https://www.rust-lang.org"><img src="https://img.shields.io/badge/Rust-1.85-DEA584?style=flat-square&logo=rust&logoColor=white" alt="Rust" /></a>
+  <img src="https://img.shields.io/badge/Solidity-0.8.20-363636?style=flat-square&logo=solidity&logoColor=white" alt="Solidity" />
   <a href="https://github.com/AethelredFoundation/aethelred/blob/main/SECURITY.md"><img src="https://img.shields.io/badge/Security-Audit_Scheduled_(Q3_2026)-yellow?style=flat-square&logo=shield&logoColor=white" alt="Security Audit Scheduled" /></a>
+</p>
+<p align="center">
+  <a href="https://github.com/aethelred-foundation/aethelred/actions/workflows/ci.yml"><img src="https://img.shields.io/github/actions/workflow/status/aethelred-foundation/aethelred/ci.yml?branch=main&style=flat-square&label=Protocol+CI" alt="Protocol CI" /></a>
+  <a href="https://github.com/aethelred-foundation/aethelred/actions/workflows/security-scans.yml"><img src="https://img.shields.io/github/actions/workflow/status/aethelred-foundation/aethelred/security-scans.yml?branch=main&style=flat-square&label=Security+Scans" alt="Security Scans" /></a>
+  <a href="https://github.com/aethelred-foundation/aethelred/actions/workflows/contracts-ci.yml"><img src="https://img.shields.io/github/actions/workflow/status/aethelred-foundation/aethelred/contracts-ci.yml?branch=main&style=flat-square&label=Contracts+CI" alt="Contracts CI" /></a>
+  <img src="https://img.shields.io/badge/Cosmos_SDK-v0.50-2E3148?style=flat-square" alt="Cosmos SDK" />
+  <img src="https://img.shields.io/badge/CometBFT-v0.38-blue?style=flat-square" alt="CometBFT" />
+  <img src="https://img.shields.io/badge/PQC-Kyber+Dilithium-purple?style=flat-square" alt="PQC" />
 </p>
 
 <br>
