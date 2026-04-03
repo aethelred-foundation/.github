@@ -11,9 +11,20 @@
   <a href="https://www.aethelred.io"><img src="https://img.shields.io/badge/Protocol-aethelred.io-F97316?style=flat-square" alt="Protocol" /></a>
   <a href="https://docs.aethelred.io"><img src="https://img.shields.io/badge/Docs-docs.aethelred.io-FF6B35?style=flat-square&logo=gitbook&logoColor=white" alt="Documentation" /></a>
   <a href="https://discord.gg/aethelred"><img src="https://img.shields.io/badge/Discord-Community-5865F2?style=flat-square&logo=discord&logoColor=white" alt="Discord" /></a>
+  <a href="https://github.com/aethelred-foundation/AIPs"><img src="https://img.shields.io/badge/AIPs-proposals-7C3AED?style=flat-square" alt="AIPs" /></a>
+  <a href="https://github.com/aethelred-foundation/aethelred/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-Apache_2.0-2563EB?style=flat-square" alt="License" /></a>
+</p>
+
+<p align="center">
   <a href="https://github.com/aethelred-foundation/aethelred/blob/main/docs/WHITEPAPER.md"><img src="https://img.shields.io/badge/Whitepaper-public%20draft-0F766E?style=flat-square" alt="Whitepaper" /></a>
   <a href="https://github.com/aethelred-foundation/aethelred/blob/main/docs/TOKENOMICS.md"><img src="https://img.shields.io/badge/Tokenomics-public%20draft-14532D?style=flat-square" alt="Tokenomics" /></a>
   <a href="https://github.com/aethelred-foundation/aethelred/blob/main/docs/audits/STATUS.md"><img src="https://img.shields.io/badge/Security-audit%20scopes%20in%20progress-F59E0B?style=flat-square&logo=shield&logoColor=white" alt="Security Status" /></a>
+  <img src="https://img.shields.io/badge/Go-1.24-00ADD8?style=flat-square&logo=go&logoColor=white" alt="Go" />
+  <img src="https://img.shields.io/badge/Rust-1.85-DEA584?style=flat-square&logo=rust&logoColor=white" alt="Rust" />
+  <img src="https://img.shields.io/badge/Solidity-0.8.20-363636?style=flat-square&logo=solidity&logoColor=white" alt="Solidity" />
+  <img src="https://img.shields.io/badge/Cosmos_SDK-v0.50-2E3148?style=flat-square" alt="Cosmos SDK" />
+  <img src="https://img.shields.io/badge/CometBFT-v0.38-2563EB?style=flat-square" alt="CometBFT" />
+  <img src="https://img.shields.io/badge/PQC-ML--KEM--768+ML--DSA--65-7C3AED?style=flat-square" alt="PQC" />
 </p>
 
 <p align="center">
@@ -22,11 +33,6 @@
   <a href="https://github.com/aethelred-foundation/aethelred/actions/workflows/contracts-ci.yml"><img src="https://img.shields.io/github/actions/workflow/status/aethelred-foundation/aethelred/contracts-ci.yml?branch=main&style=flat-square&label=Contracts+CI" alt="Contracts CI" /></a>
   <a href="https://github.com/aethelred-foundation/aethelred/actions/workflows/rust-crates-ci.yml"><img src="https://img.shields.io/github/actions/workflow/status/aethelred-foundation/aethelred/rust-crates-ci.yml?branch=main&style=flat-square&label=Rust+CI" alt="Rust CI" /></a>
   <img src="https://img.shields.io/badge/Status-testnet--v1.0-CA8A04?style=flat-square" alt="Status: Testnet v1.0" />
-  <img src="https://img.shields.io/badge/Go-1.24-00ADD8?style=flat-square&logo=go&logoColor=white" alt="Go" />
-  <img src="https://img.shields.io/badge/Rust-1.85-DEA584?style=flat-square&logo=rust&logoColor=white" alt="Rust" />
-  <img src="https://img.shields.io/badge/Cosmos_SDK-v0.50-2E3148?style=flat-square" alt="Cosmos SDK" />
-  <img src="https://img.shields.io/badge/CometBFT-v0.38-2563EB?style=flat-square" alt="CometBFT" />
-  <img src="https://img.shields.io/badge/PQC-ML--KEM--768+ML--DSA--65-7C3AED?style=flat-square" alt="PQC" />
 </p>
 
 <br>
@@ -48,10 +54,11 @@
 | **Native token** | `AETHEL` |
 | **Total supply** | `10,000,000,000 AETHEL` fixed at genesis |
 | **Post-genesis inflation** | `0%` |
-| **Core token utility** | Staking, protocol fees, slashing collateral, governance, verified-compute settlement |
+| **Settlement engine** | Cosmos SDK `v0.50` + CometBFT `v0.38` with ABCI++ vote extensions |
+| **Consensus model** | Proof-of-Useful-Work with governed verification paths |
 | **Evidence artifact** | Digital Seals |
+| **Core token utility** | Staking, protocol fees, slashing collateral, governance, verified-compute settlement |
 | **Verification model** | Governed hybrid path across confidential execution and proof verification |
-| **Supported proof systems** | Groth16, PLONK, EZKL, Halo2, STARK |
 | **Confidential-compute posture** | Intel SGX, AMD SEV-SNP, AWS Nitro, Azure Confidential VMs, Google Confidential VMs, NVIDIA confidential-computing paths |
 | **Disclosure rule** | Launch, float, valuation, fundraising, and counterparty claims publish only after canonical approval |
 | **Performance rule** | Public performance claims publish only from verified benchmark packs |
@@ -115,7 +122,7 @@ The public trust posture centers on confidential execution plus independently ch
 ```
 ┌─────────────────────────────────────────────────────────────────────────┐
 │                         Applications & SDKs                             │
-│              TypeScript · Python · Go · Rust · CLI · APIs               │
+│     TypeScript · Python · Go · Rust · CLI · APIs · Verifier apps        │
 ├─────────────────────────────────────────────────────────────────────────┤
 │                          REST / gRPC / WebSocket                        │
 ├───────────────────┬───────────────────┬─────────────────────────────────┤
@@ -138,40 +145,135 @@ The public trust posture centers on confidential execution plus independently ch
 
 #### Network and Verification
 
-| Parameter | Current Public Posture |
-|:---|:---|
-| **Settlement engine** | Cosmos SDK `v0.50` + CometBFT `v0.38` with ABCI++ vote extensions |
-| **Consensus model** | Proof-of-Useful-Work with governed verification paths |
-| **Execution posture** | Approved confidential-compute backends plus proof verification |
-| **Evidence portability** | Digital Seals carry reusable execution and verification context |
-| **Workload scheduling** | Lane-based workload separation is architectural; not a throughput claim |
-| **Interoperability** | IBC support plus EVM bridge surfaces |
-| **Public throughput / latency metrics** | Benchmark-gated and published only through verified claims packs |
+| Parameter | Current Public Posture | Notes |
+|:---|:---|:---|
+| **Settlement engine** | Cosmos SDK `v0.50` + CometBFT `v0.38` | ABCI++ vote extensions are part of the public architecture |
+| **Consensus design** | Proof-of-Useful-Work | Public design links verified AI computation with settlement |
+| **Scheduler** | VRF-based assignment | Publicly described as verifiable random job routing |
+| **Vote path** | ABCI++ vote extensions | Public architecture surface |
+| **Seal settlement** | `2/3` BFT agreement path | Public README describes 2/3 consensus before seal minting |
+| **Evidence portability** | Digital Seals | Portable evidence object for enterprise, audit, and interoperability workflows |
+| **Encrypted mempool** | Present | Anti-frontrunning / threshold-encryption posture is public |
+| **Vector data plane** | Verified Vector Vault data plane | Public whitepaper description for vector architecture |
+| **Interoperability** | IBC + EVM bridge surfaces | Publicly documented bridge and relay posture |
+
+#### Performance and Benchmark Parameters
+
+| Parameter | Current Public Posture | Notes |
+|:---|:---|:---|
+| **Block time** | Benchmark-gated | Internal targets exist, but public timing claims require verified benchmark packs |
+| **Finality timing** | Benchmark-gated | Deterministic CometBFT finality is public; exact public numbers are withheld pending review |
+| **Transfer throughput** | Benchmark-gated | Public docs intentionally withhold throughput claims until verification |
+| **Compute throughput** | Benchmark-gated | Depends on workload mix, proof paths, and hardware profile |
+| **Inference latency** | Benchmark-gated | Public claims require reviewed benchmark evidence |
+| **TEE attestation latency** | Benchmark-gated | Latency claims are not public facts until verified |
+| **ZK proof latency** | Benchmark-gated | Proof-speed claims remain gated pending benchmark review |
+| **Concurrent jobs per prover** | Governed | Capacity depends on operator class and benchmark validation |
+| **Max jobs per block** | Governed | Release-config and governance controlled, not asserted as a fixed public metric here |
 
 #### Token and Economics
 
-| Parameter | Current Public Posture |
-|:---|:---|
-| **Ticker** | `AETHEL` |
-| **Total supply** | `10,000,000,000` fixed at genesis |
-| **Inflation** | `0%` post-genesis |
-| **Denomination model** | `uaethel` with 6 decimals on Cosmos L1; 18-decimal representation in EVM and Rust environments |
-| **Utility roles** | Staking, validator participation, fees, slashing collateral, governance, settlement support |
-| **Burn posture** | Supply can remain flat or decrease through burn mechanics; it does not inflate beyond the hard cap under the current public model |
-| **Allocation buckets** | Governed and published only through approved canonical token materials |
-| **Launch float / pricing / valuation / fundraising** | Withheld pending canonical token source pack approval |
-| **Exchange / market-maker / liquidity counterparties** | Named publicly only after executed status and disclosure approval |
+| Parameter | Current Public Posture | Notes |
+|:---|:---|:---|
+| **Ticker** | `AETHEL` | Public |
+| **Total supply** | `10,000,000,000` fixed at genesis | Public |
+| **Inflation** | `0%` post-genesis | Public |
+| **Genesis mint model** | Fixed supply minted at genesis | Public |
+| **Denomination model** | `uaethel` with 6 decimals on Cosmos L1; 18-decimal representation in EVM and Rust environments | Public technical denomination model |
+| **Utility roles** | Staking, validator participation, fees, slashing collateral, governance, settlement support | Public |
+| **Burn posture** | Qualitatively public | Fees can be partially burned; exact public curve is not published |
+| **Supply expansion boundary** | Hard-cap protected | Public docs state supply cannot exceed the cap without code and governance change |
+| **Treasury / ecosystem coordination** | Governed | Publicly acknowledged as controlled under governance |
 
-#### Security and Delivery
+#### Allocation and Release Parameters
 
-| Parameter | Current Public Posture |
-|:---|:---|
-| **Internal security review** | `27` findings remediated and verified |
-| **Internal full audit v2** | `36` findings closed |
-| **External audit scopes** | In progress |
-| **Testnet posture** | Operational readiness program backed by release bundles, runbooks, CI evidence, and local / hosted rehearsals |
-| **Operator guidance** | See runbooks and hardware docs in the core monorepo |
-| **Mainnet gate** | Blocked until required signed external scopes complete |
+| Parameter Family | Current Public Posture | Notes |
+|:---|:---|:---|
+| **Compute / PoUW rewards** | Public category, exact sizing withheld | Release metrics publish only through the canonical token source pack |
+| **Ecosystem / builder programs** | Public category, exact sizing withheld | Program existence is public; exact amounts remain disclosure-gated |
+| **Contributor / team releases** | Governed | Exact unlock schedules are not public facts on the org overview |
+| **Investor / financing buckets** | Withheld pending canonical release | Pricing, round structure, and fundraising metrics are not public protocol facts |
+| **Public launch float** | Withheld pending canonical release | Launch float and circulating baseline publish only after approval |
+| **Price / valuation / FDV** | Withheld pending canonical release | Not treated as protocol facts on the org overview |
+| **Counterparty names** | Executed-only disclosure | Exchanges, market makers, and similar counterparties are named only after executed status and approval |
+| **Performance-linked commercial claims** | Benchmark-gated | Verified benchmark packs are required before publication |
+
+#### Consensus and Validator Parameters
+
+| Parameter | Current Public Posture | Notes |
+|:---|:---|:---|
+| **Leader selection** | VRF-based | Publicly described in the protocol architecture |
+| **Stake / compute weighting** | Governed | Public docs describe PoUW and VRF, but do not lock a public weighting table on the org overview |
+| **Active validator set (testnet)** | `50` | Current testnet runbook parameter |
+| **Active validator set (mainnet)** | Governed | Final production sizing is release-controlled |
+| **Min stake (testnet)** | `1,000 tAETHEL` | Current testnet runbook parameter |
+| **Min stake (mainnet)** | `100,000 AETHEL` | Current mainnet runbook parameter |
+| **Unbonding (testnet / mainnet)** | `1 day` / `21 days` | Current runbook parameters |
+| **Uptime requirement (testnet / mainnet)** | `80%` / `95%` | Current runbook parameters |
+| **Double-sign slash** | `50%` | Publicly documented in runbooks |
+| **Simulated proofs** | Allowed on testnet / forbidden on mainnet | Current runbook posture |
+| **Compliance plane** | Disabled on testnet / enabled on mainnet | Current runbook posture |
+
+#### Node Classes and Operator Surfaces
+
+| Node Class | Current Public Posture | Notes |
+|:---|:---|:---|
+| **Standard Validator** | Public operator class | Consensus, block proposal, and light verification |
+| **Compute Prover** | Public operator class | AI inference, proof generation, and heavy confidential-compute workloads |
+| **Sentry / failover surfaces** | Required for mainnet ops posture | Detailed topology remains in runbooks, not in the org overview |
+| **HSM posture** | Mainnet-required operator control | Explicitly part of current mainnet operations guidance |
+| **Hardware truth source** | Runbooks + hardware docs | The org overview should summarize, while detailed SKUs live in operator docs |
+
+#### Execution, Proof, and Integration Parameters
+
+| Parameter | Current Public Posture | Notes |
+|:---|:---|:---|
+| **TEE backends** | Intel SGX, AMD SEV-SNP, AWS Nitro, Azure Confidential VMs, Google Confidential VMs, NVIDIA confidential-computing paths | Public |
+| **Proof systems** | Groth16, PLONK, EZKL, Halo2, STARK | Public |
+| **Post-quantum posture** | ML-DSA-65 + ML-KEM-768 default transport profile | Public |
+| **SDK languages** | TypeScript, Python, Go, Rust | Public |
+| **Integration surfaces** | PyTorch, TensorFlow / Keras, Hugging Face, LangChain, FastAPI, Next.js, Docker, Kubernetes Helm | Public website and SDK docs |
+| **Model / proof compilation surface** | ONNX-to-EZKL path when enabled in registry workflow | Public proof-surface description |
+| **API surfaces** | REST, gRPC, WebSocket, CLI | Public |
+
+#### Bridge and Settlement Parameters
+
+| Parameter | Current Public Posture | Notes |
+|:---|:---|:---|
+| **IBC surface** | Public | Core interoperability path |
+| **Ethereum bridge** | Public | EVM bridge surface is part of the core monorepo |
+| **Stablecoin routing posture** | Circle CCTP V2 plus TEE issuer mint for non-CCTP assets | Public site posture |
+| **Liquidity model** | Zero-liquidity-pool institutional routing | Public materials explicitly avoid an AMM / LP custody bridge framing |
+| **Issuer / settlement partner roster** | Not publicly listed | Current site posture withholds live issuer and custodian rosters |
+| **Counterparty disclosure** | Executed-only | Public naming follows approval and executed status |
+
+#### Security, Audit, and Delivery Parameters
+
+| Parameter | Current Public Posture | Notes |
+|:---|:---|:---|
+| **Internal security review** | `27` findings remediated and verified | Public audit tracker |
+| **Internal full audit v2** | `36` findings closed | Public audit tracker |
+| **External consultant VRF review** | Completed | Critical RS-01 closed |
+| **External audit scopes** | In progress | Consensus / vote extensions and Ethereum contracts scopes remain active |
+| **Security scan posture** | Public CI gate | gosec, trivy, gitleaks, slither, govulncheck, cargo-audit, npm audit |
+| **Testnet posture** | Operational readiness program | Whitepaper explicitly frames public testnet as readiness, not marketing |
+| **Mainnet gate** | Blocked until required signed external scopes complete | Public audit tracker |
+
+---
+
+### Testnet vs Mainnet Operating Parameters
+
+| Parameter | Testnet | Mainnet |
+|:---|:---:|:---:|
+| **Tokens have value** | No | Yes |
+| **HSM required** | No | Yes |
+| **Sentry nodes required** | No | Yes (2+) |
+| **Failover node required** | No | Yes |
+| **Min stake** | `1,000 tAETHEL` | `100,000 AETHEL` |
+| **Unbonding** | `1 day` | `21 days` |
+| **Uptime requirement** | `80%` | `95%` |
+| **Simulated proofs** | Allowed | Forbidden |
+| **Compliance plane** | Disabled | Enabled |
 
 ---
 
@@ -208,5 +310,5 @@ The public trust posture centers on confidential execution plus independently ch
 ---
 
 <p align="center">
-  <sub>Public-facing metrics on this overview page are intentionally limited to values and claims supported by the current whitepaper, tokenomics, and approved website posture.</sub>
+  <sub>This overview intentionally keeps full parameter coverage while separating confirmed public metrics from governed, benchmark-gated, and disclosure-gated categories so the org page stays detailed without drifting away from the current canonical docs.</sub>
 </p>
