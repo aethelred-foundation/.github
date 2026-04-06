@@ -1,8 +1,8 @@
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/AethelredFoundation/.github/main/profile/banner-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/AethelredFoundation/.github/main/profile/banner-light.svg">
-    <img alt="Aethelred" src="https://raw.githubusercontent.com/AethelredFoundation/.github/main/profile/banner-dark.svg" width="900">
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/aethelred-foundation/.github/main/profile/banner-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/aethelred-foundation/.github/main/profile/banner-light.svg">
+    <img alt="Aethelred" src="https://raw.githubusercontent.com/aethelred-foundation/.github/main/profile/banner-dark.svg" width="900">
   </picture>
 </p>
 

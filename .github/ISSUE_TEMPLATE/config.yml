@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Protocol repository
+    url: https://github.com/aethelred-foundation/aethelred
+    about: Report protocol issues in the main repository.
+  - name: Security reporting
+    url: mailto:security@aethelred.io
+    about: Report vulnerabilities privately to the Aethelred security team.
